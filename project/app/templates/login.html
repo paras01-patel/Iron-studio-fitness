@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login | Iron Studio Fitness{% endblock %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+    .login-box{
+        width: 100%;
+        max-width: 420px;
+        margin: 90px auto;
+        background: #151515;
+        padding: 35px;
+        border-radius: 18px;
+        border: 1px solid #2a2a2a;
+        box-shadow: 0 0 25px rgba(255, 30, 30, 0.15);
+    }
+
+    .login-title{
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .btn-red{
+        background: #ff1e1e;
+        color: white;
+        width: 100%;
+        border-radius: 50px;
+        padding: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-red:hover{
+        background: white;
+        color: black;
+        transform: scale(1.03);
+    }
+
+    input{
+        background: #0b0b0b !important;
+        color: white !important;
+        border: 1px solid #333 !important;
+        border-radius: 10px !important;
+        padding: 10px;
+    }
+
+    input:focus{
+        border-color: #ff1e1e !important;
+        box-shadow: none !important;
+    }
+
+    .form-text a{
+        color: #ff1e1e;
+        text-decoration: none;
+    }
+
+    .form-text a:hover{
+        text-decoration: underline;
+    }
+</style>
+{% endblock css %}
+
+{% block content %}
+
+<div class="login-box">
+
+    <h3 class="login-title">LOGIN</h3>
+
+    <!-- Django Messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <a href="#" style="color:#ff1e1e; font-size:14px;">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-red">Login</button>
+    </form>
+
+    <p class="text-center mt-3">
+        New user? 
+        <a href="#" style="color:#ff1e1e;">Create account</a>
+    </p>
+
+</div>
+
+{% endblock content %}
