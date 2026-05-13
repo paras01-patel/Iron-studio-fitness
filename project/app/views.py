@@ -1,28 +1,67 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
-
-# Create your views here.
+from django.contrib.auth.models import User
+from django.views.decorators.cache import never_cache
 
 
 def home(req):
-    return render(req,'home.html')
+    return render(req, 'home.html')
 
+@never_cache
+def sign(req):
+    if req.method == "POST":
+        uname = req.POST.get("username")
+        email = req.POST.get("email")
+        pass1 = req.POST.get("password1")
+        pass2 = req.POST.get("password2")
+        
+        if pass1 != pass2:
+            messages.error(req, "Passwords not matching!")
+            return redirect('sign')
+
+        if User.objects.filter(username=uname).exists():
+            messages.error(req, "Username already exists!")
+            return redirect('sign')
+
+        User.objects.create_user(
+            username=uname,
+            email=email,
+            password=pass1
+        )
+
+        messages.success(req, "Account created successfully!")
+        return redirect('login')
+    return render(req, 'sign.html')
+
+@never_cache
 def login(request):
     if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        uname = request.POST.get("username")
+        password = request.POST.get("password")
 
-        # (demo check)
-        if username == "admin" and password == "123":
+        uname = uname.strip()
+        user = User.objects.filter(username__iexact=uname).first()
 
-            # 🔥 SESSION STORE
-            request.session['username'] = username
-            request.session['password'] = password   # (demo only)
-            request.session['is_logged_in'] = True
+        if not user:
+            messages.error(request, "User not found! Please signup first.")
+            return redirect('sign')
 
+        if user.check_password(password):
+
+            request.session['user_id'] = user.id
+            request.session['username'] = user.username
+
+            messages.success(request, "Login successful!")
             return redirect('home')
 
         else:
-            return render(request, 'login.html', {'error': 'Invalid'})
+            messages.error(request, "Wrong password!")
+            return redirect('login')
 
     return render(request, 'login.html')
+
+@never_cache
+def logout(request):
+    request.session.flush()
+    messages.success(request, "Logged out successfully!")
+    return redirect('login')
