@@ -7,6 +7,9 @@ from django.views.decorators.cache import never_cache
 def home(req):
     return render(req, 'home.html')
 
+def plans(req):
+    return render(req, 'plans.html')
+
 @never_cache
 def sign(req):
     if req.method == "POST":
