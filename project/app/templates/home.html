@@ -1,10 +1,420 @@
-{% extends "base.html" %}
-{% block css %}
-<style>
-.ha{
-    text-align:center;
-}
-</style>
+{% extends 'base.html' %}
+{% load static %}
 
-{% endblock css %}
-{% block content %} <h1 class="ha">this is home </h1>{% endblock content %} 
+{% block title %}
+Iron Studio Fitness
+{% endblock %}
+
+{% block content %}
+
+<!-- ================================= -->
+<!-- PREMIUM HERO SECTION -->
+<!-- ================================= -->
+
+<section class="premium-hero d-flex align-items-center">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 text-white">
+
+                <span class="premium-tag">
+                    #1 FITNESS CLUB
+                </span>
+
+                <h1 class="display-2 fw-bold mt-4 mb-4">
+                    Transform Your
+                    <span class="text-danger">
+                        Body & Mind
+                    </span>
+                </h1>
+
+                <p class="lead mb-4 text-light">
+                    Join Iron Studio Fitness and achieve your dream physique
+                    with world-class trainers, premium equipment,
+                    and personalized workout plans.
+                </p>
+
+                <div class="d-flex gap-3 flex-wrap">
+
+                    <a href="{% url 'login' %}"
+                       class="btn btn-danger btn-lg px-5 py-3 fw-bold">
+                        Join Now
+                    </a>
+
+                    <a href="#"
+                       class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+                        Explore Plans
+                    </a>
+
+                </div>
+
+                <!-- STATS -->
+
+                <div class="row mt-5">
+
+                    <div class="col-4">
+                        <h2 class="fw-bold text-danger">5K+</h2>
+                        <p>Members</p>
+                    </div>
+
+                    <div class="col-4">
+                        <h2 class="fw-bold text-danger">25+</h2>
+                        <p>Trainers</p>
+                    </div>
+
+                    <div class="col-4">
+                        <h2 class="fw-bold text-danger">10+</h2>
+                        <p>Years</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="col-lg-6 text-center">
+
+                <img src="{% static 'images/homee.avif' %}"
+                    class="img-fluid hero-image rounded-4"
+                    alt="gi">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ABOUT SECTION -->
+<!-- ================================= -->
+
+<section class="about-section py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 mb-4">
+
+                <img src="{% static 'images/hhhh.avif' %}"
+                    class="img-fluid rounded-4 shadow-lg"
+                    alt="About">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <h5 class="text-danger fw-bold">
+                    ABOUT US
+                </h5>
+
+                <h2 class="display-5 fw-bold mb-4">
+                    Welcome To
+                    Iron Studio Fitness
+                </h2>
+
+                <p class="text-white mb-4">
+                    We provide premium gym facilities with modern machines,
+                    expert trainers, cardio zones, personal training,
+                    and body transformation programs.
+                </p>
+
+                <div class="row">
+
+                    <div class="col-6 mb-3">
+                        ✅ Modern Equipment
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        ✅ Certified Trainers
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        ✅ Weight Loss Program
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        ✅ Diet Guidance
+                    </div>
+
+                </div>
+
+                <button class="btn btn-danger px-5 py-3 mt-3">
+                    Read More
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="motivation-section py-5">
+                
+                    <div class="container text-center text-white">
+                
+                        <h1 class="display-3 fw-bold">
+                            NO PAIN
+                            <span class="text-danger">
+                                NO GAIN
+                            </span>
+                        </h1>
+                
+                        <p class="lead mt-4">
+                            Push harder than yesterday if you want a different tomorrow.
+                        </p>
+                
+                    </div>
+                
+                </section>
+
+<!-- ================================= -->
+<!-- SERVICES -->
+<!-- ================================= -->
+
+<section class="services-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h5 class="text-danger fw-bold">
+                OUR SERVICES
+            </h5>
+
+            <h2 class="display-5 fw-bold text-white">
+                What We Offer
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        💪
+                    </div>
+
+                    <h3 class="mt-4">
+                        Body Building
+                    </h3>
+
+                    <p>
+                        Professional bodybuilding programs
+                        with expert guidance.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🏃
+                    </div>
+
+                    <h3 class="mt-4">
+                        Cardio Fitness
+                    </h3>
+
+                    <p>
+                        Improve stamina and burn calories
+                        with advanced cardio training.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🥗
+                    </div>
+
+                    <h3 class="mt-4">
+                        Diet Plans
+                    </h3>
+
+                    <p>
+                        Customized diet and nutrition plans
+                        for best results.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ================================= -->
+<!-- TRAINERS -->
+<!-- ================================= -->
+
+<section class="trainer-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h5 class="text-danger fw-bold">
+                OUR TRAINERS
+            </h5>
+
+            <h2 class="display-5 fw-bold text-white">
+                Meet Experts
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="trainer-card">
+
+                    <img src="{% static 'images/trainer1.jpg' %}"
+                        class="img-fluid"
+                        alt="Trainer">
+
+                    <div class="trainer-info">
+
+                        <h4>Paras Patel</h4>
+                        <p>Bodybuilding Coach</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="trainer-card">
+
+                    <img src="{% static 'images/trainer2.jpg' %}"
+                         class="img-fluid"
+                         alt="Trainer">
+
+                    <div class="trainer-info">
+
+                        <h4>Vikas Pawar</h4>
+                        <p>Strength Coach</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="trainer-card">
+
+                    <img src="{% static 'images/trainer3.jpg' %}"
+                         class="img-fluid"
+                         alt="Trainer">
+
+                    <div class="trainer-info">
+
+                        <h4>Karan Lifter</h4>
+                        <p>Weight Loss Expert</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="bmi-section py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 text-white">
+
+                <h5 class="text-danger fw-bold">
+                    BMI CALCULATOR
+                </h5>
+
+                <h1 class="display-5 fw-bold mb-4">
+                    Calculate Your Body Mass Index
+                </h1>
+
+                <p class="text-light mb-4">
+                    Track your fitness journey and know your body condition.
+                </p>
+
+                <div class="row">
+
+                    <div class="col-6 mb-3">
+                        <input type="text"
+                               class="form-control bmi-input"
+                               placeholder="Height / cm">
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <input type="text"
+                               class="form-control bmi-input"
+                               placeholder="Weight / kg">
+                    </div>
+
+                </div>
+
+                <button class="btn btn-danger px-5 py-3">
+                    Calculate
+                </button>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="{% static 'img/hhh.jpg' %}"
+                     class="img-fluid bmi-img"
+                     alt="BMI">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
