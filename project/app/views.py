@@ -7,6 +7,9 @@ from django.views.decorators.cache import never_cache
 def home(req):
     return render(req, 'home.html')
 
+def about(req):
+    return render(req, 'about.html')
+
 def plans(req):
     return render(req, 'plans.html')
 
