@@ -13,6 +13,9 @@ def about(req):
 def plans(req):
     return render(req, 'plans.html')
 
+def contact(req):
+    return render(req, 'contact.html')
+
 @never_cache
 def sign(req):
     if req.method == "POST":
