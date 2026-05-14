@@ -13,6 +13,10 @@ def about(req):
 def plans(req):
     return render(req, 'plans.html')
 
+def trainers(req):
+    return render(req, 'trainers.html')
+
+
 def contact(req):
     return render(req, 'contact.html')
 
