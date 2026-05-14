@@ -16,6 +16,9 @@ def plans(req):
 def trainers(req):
     return render(req, 'trainers.html')
 
+def problem(req):
+    return render(req, 'problem.html')
+
 
 def contact(req):
     return render(req, 'contact.html')

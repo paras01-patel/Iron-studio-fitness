@@ -154,6 +154,52 @@
         footer hr{
             border-color:rgba(255,255,255,0.1);
         }
+        /* MENU BUTTON */
+.menu-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#151515;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:15px;
+    transition:0.3s;
+    font-size:18px;
+}
+
+.menu-btn:hover{
+    background:#ff1e1e;
+    color:white;
+}
+
+/* DROPDOWN */
+.menu-box,
+.user-dropdown{
+    width:260px;
+    background:#111;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.08);
+    padding:10px;
+}
+
+.dropdown-item{
+    color:white;
+    padding:12px 15px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.dropdown-item:hover{
+    background:#1f1f1f;
+    color:#ff1e1e;
+    transform:translateX(5px);
+}
+
+.dropdown-divider{
+    border-color:rgba(255,255,255,0.08);
+}
 
     </style>
 
@@ -161,39 +207,68 @@
 <body>
 
 <!-- ================= NAVBAR ================= -->
+# Updated Navbar for Iron Studio Fitness
+
+Replace your current navbar section with this (menu bar already added inside navbar):
+
+```html
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
 
+        <!-- LOGO -->
         <a class="navbar-brand" href="{% url 'home' %}">
             IRON <span>STUDIO</span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <!-- MOBILE BUTTON -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#nav">
+
             <span class="navbar-toggler-icon"></span>
+
         </button>
 
+        <!-- NAVBAR ITEMS -->
         <div class="collapse navbar-collapse" id="nav">
 
             <ul class="navbar-nav ms-auto align-items-lg-center">
 
+                <!-- HOME -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">
+                        Home
+                    </a>
                 </li>
 
+                <!-- ABOUT -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                    <a class="nav-link" href="{% url 'about' %}">
+                        About
+                    </a>
                 </li>
 
+                <!-- PLANS -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'plans' %}">Plans</a>
+                    <a class="nav-link" href="{% url 'plans' %}">
+                        Plans
+                    </a>
                 </li>
 
+                <!-- TRAINERS -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'trainers' %}">Trainers</a>
+                    <a class="nav-link" href="{% url 'trainers' %}">
+                        Trainers
+                    </a>
                 </li>
 
+                <!-- CONTACT -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">
+                        Contact
+                    </a>
                 </li>
 
                 <!-- LOGIN / USER -->
@@ -201,16 +276,53 @@
 
                 <li class="nav-item dropdown ms-lg-3 mt-3 mt-lg-0">
 
-                    <a class="btn btn-red dropdown-toggle" data-bs-toggle="dropdown">
-                    Welcome {{ request.session.username }}
+                    <a class="btn btn-red dropdown-toggle"
+                       data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-user me-2"></i>
+                        {{ request.session.username }}
+
                     </a>
 
-                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end user-dropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-user me-2"></i>
+                                My Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-gear me-2"></i>
+                                Settings
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-moon me-2"></i>
+                                Switch Appearance
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{% url 'problem' %}">
+                                <i class="fa-solid fa-circle-exclamation me-2"></i>
+                                Report a Problem
+                            </a>
+                        </li>
+
                         <li><hr class="dropdown-divider"></li>
 
                         <li>
-                            <a class="dropdown-item" href="{% url 'logout' %}">
-                                <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
+                            <a class="dropdown-item text-danger"
+                            href="{% url 'logout' %}">
+
+                                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                Logout
+
                             </a>
                         </li>
 
@@ -222,21 +334,32 @@
 
                 <li class="nav-item dropdown ms-lg-3 mt-3 mt-lg-0">
 
-                    <a class="btn btn-red dropdown-toggle" data-bs-toggle="dropdown">
+                    <a class="btn btn-red dropdown-toggle"
+                    data-bs-toggle="dropdown">
+
                         Join Now
+
                     </a>
 
-                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end user-dropdown">
 
                         <li>
-                            <a class="dropdown-item" href="{% url 'login' %}">
-                                <i class="fa-solid fa-right-to-bracket me-2"></i> Login
+                            <a class="dropdown-item"
+                            href="{% url 'login' %}">
+
+                                <i class="fa-solid fa-right-to-bracket me-2"></i>
+                                Login
+
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="{% url 'sign' %}">
-                                <i class="fa-solid fa-user-plus me-2"></i> Sign Up
+                            <a class="dropdown-item"
+                            href="{% url 'sign' %}">
+
+                                <i class="fa-solid fa-user-plus me-2"></i>
+                                Sign Up
+
                             </a>
                         </li>
 
@@ -246,12 +369,77 @@
 
                 {% endif %}
 
+                <!-- MENU BAR -->
+                <li class="nav-item dropdown ms-lg-3 mt-3 mt-lg-0">
+
+                    <a class="menu-btn"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end menu-box">
+
+                        {% if request.session.user_id %}
+
+                        <li class="px-3 py-2">
+
+                            <small class="text-secondary">
+                                Logged in as
+                            </small>
+
+                            <h6 class="text-white m-0">
+                                {{ request.session.username }}
+                            </h6>
+
+                        </li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        {% endif %}
+
+                        <li>
+                            <a class="dropdown-item" href="{% url 'about' %}">
+                                <i class="fa-solid fa-circle-info me-2"></i>
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{% url 'trainers' %}">
+                                <i class="fa-solid fa-user-group me-2"></i>
+                                Trainers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{% url 'plans' %}">
+                                <i class="fa-solid fa-dumbbell me-2"></i>
+                                Workout Plans
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{% url 'contact' %}">
+                                <i class="fa-solid fa-phone me-2"></i>
+                                Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
             </ul>
 
         </div>
 
     </div>
 </nav>
+
 
 <!-- ================= CONTENT ================= -->
 {% block content %}
