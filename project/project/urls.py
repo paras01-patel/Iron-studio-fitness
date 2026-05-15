@@ -31,6 +31,9 @@ urlpatterns = [
     path('sign',views.sign,name='sign'),
     path('logout',views.logout,name='logout'),
     
+    path('adminpanel',views.adminpanel,name='adminpanel'),
+    path('reports',views.reports,name='reports')
+    
     
     
 ]

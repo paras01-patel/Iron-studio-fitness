@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views.decorators.cache import never_cache
+from .models import report
 
 
 def home(req):
@@ -17,6 +18,22 @@ def trainers(req):
     return render(req, 'trainers.html')
 
 def problem(req):
+
+    if req.method == "POST":
+
+        name = req.POST.get("name")
+        email = req.POST.get("email")
+        problem= req.POST.get("problem")
+        message = req.POST.get("message")
+
+        report.objects.create(
+            name=name,
+            email=email,
+            problem=problem,
+            message=message
+        )
+        messages.success(req, "Problem Submitted Successfully!")
+        return redirect('problem')
     return render(req, 'problem.html')
 
 
@@ -56,6 +73,15 @@ def login(request):
         password = request.POST.get("password")
 
         uname = uname.strip()
+
+        # 🔥 HARD CODE ADMIN ADD (NEW ADDITION ONLY)
+        if uname == "admin" and password == "admin123":
+            request.session['admin'] = True
+            request.session['username'] = "Admin"
+
+            messages.success(request, "Admin login successful!")
+            return redirect('adminpanel')
+
         user = User.objects.filter(username__iexact=uname).first()
 
         if not user:
@@ -81,3 +107,10 @@ def logout(request):
     request.session.flush()
     messages.success(request, "Logged out successfully!")
     return redirect('login')
+
+def adminpanel(req):
+    return render (req,'adminpanel.html')
+
+def reports(req):
+    data = report.objects.all()
+    return render(req, 'reports.html', {'data': data})
