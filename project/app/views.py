@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views.decorators.cache import never_cache
-from .models import report
-
+from .models import report,con
 
 def home(req):
     return render(req, 'home.html')
@@ -37,8 +36,23 @@ def problem(req):
     return render(req, 'problem.html')
 
 
-def contact(req):
-    return render(req, 'contact.html')
+def contacts(req):
+    if req.method=="POST":
+        name=req.POST.get('name')
+        email=req.POST.get('email')
+        phone=req.POST.get('phone')
+        message=req.POST.get('message')
+        
+        con.objects.create(
+            name=name,
+            email=email,
+            phone=phone,
+            message=message
+        )
+        messages.success(req, "Contact Submitted Successfully!")
+        return redirect('contacts')
+        
+    return render(req, 'contacts.html')
 
 @never_cache
 def sign(req):
@@ -115,3 +129,7 @@ def adminpanel(req):
 def reports(req):
     data = report.objects.all()
     return render(req, 'reports.html', {'data': data})
+
+def contactlist(req):
+    data=con.objects.all()
+    return render(req,'contactlist.html',{'data':data})

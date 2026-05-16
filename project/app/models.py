@@ -20,3 +20,13 @@ class report(models.Model):
     
     def __str__(self):
         return self.name
+    
+
+class con(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.EmailField(max_length=50)
+    phone=models.IntegerField()
+    message=models.CharField(max_length=500)
+    
+    def __str__(self):
+        return self.name
