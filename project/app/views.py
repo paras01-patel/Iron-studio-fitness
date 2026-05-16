@@ -108,6 +108,7 @@ def logout(request):
     messages.success(request, "Logged out successfully!")
     return redirect('login')
 
+@never_cache
 def adminpanel(req):
     return render (req,'adminpanel.html')
 
