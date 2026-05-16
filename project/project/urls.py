@@ -12,6 +12,8 @@ urlpatterns = [
     path('trainers/', views.trainers, name='trainers'),
     path('contacts/', views.contacts, name='contacts'),
     path('problem/', views.problem, name='problem'),
+    path('join/', views.join, name='join'),
+    
 
     path('login/', views.login, name='login'),
     path('sign/', views.sign, name='sign'),
@@ -20,5 +22,8 @@ urlpatterns = [
     path('adminpanel/', views.adminpanel, name='adminpanel'),
     path('reports/', views.reports, name='reports'),
     path('contactlist/', views.contactlist, name='contactlist'),
+    path('training/', views.training, name='training'),
+    path('joining/',views.joining,name='joining')
+    
 
 ]
