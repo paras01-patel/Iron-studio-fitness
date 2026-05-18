@@ -7,17 +7,355 @@ Iron Studio Fitness
 
 {% block content %}
 
+<style>
+
+/* ================================= */
+/* GLOBAL */
+/* ================================= */
+
+body{
+    background:#000;
+    overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+section{
+    position:relative;
+}
+
+.text-danger{
+    color:#ff2e2e !important;
+}
+
+/* ================================= */
+/* HERO SECTION */
+/* ================================= */
+
+.premium-hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url("{% static 'images/gymbg.jpg' %}");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:120px 0;
+}
+
+.premium-tag{
+    background:rgba(255,0,0,.15);
+    border:1px solid rgba(255,0,0,.4);
+    color:#ff3b3b;
+    padding:12px 22px;
+    border-radius:50px;
+    font-weight:600;
+}
+
+.hero-image{
+    width:100%;
+    max-width:550px;
+    border-radius:30px;
+    box-shadow:0 0 40px rgba(255,0,0,.3);
+    transition:.5s;
+}
+
+.hero-image:hover{
+    transform:scale(1.03);
+}
+
+/* ================================= */
+/* BUTTONS */
+/* ================================= */
+
+.btn-danger{
+    background:linear-gradient(45deg,#ff0000,#ff4d4d);
+    border:none;
+    border-radius:50px;
+    transition:.4s;
+}
+
+.btn-danger:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 40px rgba(255,0,0,.5);
+}
+
+.btn-outline-light{
+    border-radius:50px;
+}
+
+/* ================================= */
+/* ABOUT */
+/* ================================= */
+
+.about-section{
+    background:#050505;
+}
+
+.about-section img{
+    border-radius:25px;
+    transition:.5s;
+}
+
+.about-section img:hover{
+    transform:scale(1.03);
+}
+
+/* ================================= */
+/* MOTIVATION */
+/* ================================= */
+
+.motivation-section{
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("{% static 'images/motivation.jpg' %}");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    padding:120px 0;
+}
+
+/* ================================= */
+/* SERVICES */
+/* ================================= */
+
+.services-section{
+    background:#080808;
+}
+
+.service-card{
+    background:#111;
+    padding:40px 30px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    transition:.5s;
+    height:100%;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(255,0,0,.2);
+}
+
+.service-icon{
+    width:90px;
+    height:90px;
+    background:red;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    font-size:35px;
+}
+
+/* ================================= */
+/* WHY CHOOSE */
+/* ================================= */
+
+.why-section{
+    background:#050505;
+}
+
+.why-card{
+    background:#111;
+    padding:40px 25px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    transition:.5s;
+    height:100%;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(255,0,0,.2);
+}
+
+.why-icon{
+    width:90px;
+    height:90px;
+    background:red;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+/* ================================= */
+/* TRAINERS */
+/* ================================= */
+
+.trainer-section{
+    background:#080808;
+}
+
+.trainer-card{
+    background:#111;
+    border-radius:25px;
+    overflow:hidden;
+    transition:.5s;
+}
+
+.trainer-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(255,0,0,.25);
+}
+
+.trainer-card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+
+.trainer-info{
+    padding:25px;
+    text-align:center;
+    color:white;
+}
+
+/* ================================= */
+/* MEMBERSHIP */
+/* ================================= */
+
+.plans-section{
+    background:#050505;
+}
+
+.plan-card{
+    background:#111;
+    padding:50px 35px;
+    border-radius:30px;
+    position:relative;
+    transition:.5s;
+    color:white;
+}
+
+.plan-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(255,0,0,.25);
+}
+
+.popular-badge{
+    position:absolute;
+    top:-12px;
+    right:20px;
+    background:red;
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.premium-plan{
+    border:2px solid red;
+}
+
+/* ================================= */
+/* TESTIMONIAL */
+/* ================================= */
+
+.testimonial-section{
+    background:#080808;
+}
+
+.testimonial-card{
+    background:#111;
+    padding:40px 30px;
+    border-radius:25px;
+    color:white;
+    transition:.5s;
+    height:100%;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(255,0,0,.2);
+}
+
+/* ================================= */
+/* BMI */
+/* ================================= */
+
+.bmi-section{
+    background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
+    url("{% static 'images/bmi-bg.jpg' %}");
+    background-size:cover;
+    background-position:center;
+}
+
+.bmi-input{
+    height:60px;
+    background:#111;
+    border:none;
+    color:white;
+    border-radius:15px;
+    padding-left:20px;
+}
+
+.bmi-input:focus{
+    background:#111;
+    color:white;
+    box-shadow:none;
+    border:1px solid red;
+}
+
+.bmi-img{
+    max-width:450px;
+    border-radius:25px;
+}
+
+/* ================================= */
+/* SCROLLBAR */
+/* ================================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:red;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+    background:black;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:768px){
+
+    .display-2{
+        font-size:50px;
+    }
+
+    .premium-hero{
+        text-align:center;
+    }
+
+}
+
+</style>
+
 <!-- ================================= -->
-<!-- PREMIUM HERO SECTION -->
+<!-- HERO -->
 <!-- ================================= -->
 
-<section class="premium-hero d-flex align-items-center">
+<section class="premium-hero">
 
     <div class="container">
 
         <div class="row align-items-center">
 
-            <!-- LEFT CONTENT -->
             <div class="col-lg-6 text-white">
 
                 <span class="premium-tag">
@@ -33,8 +371,7 @@ Iron Studio Fitness
 
                 <p class="lead mb-4 text-light">
                     Join Iron Studio Fitness and achieve your dream physique
-                    with world-class trainers, premium equipment,
-                    and personalized workout plans.
+                    with premium trainers and advanced workout plans.
                 </p>
 
                 <div class="d-flex gap-3 flex-wrap">
@@ -45,42 +382,19 @@ Iron Studio Fitness
                     </a>
 
                     <a href="#"
-                        class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+                       class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
                         Explore Plans
                     </a>
 
                 </div>
 
-                <!-- STATS -->
-
-                <div class="row mt-5">
-
-                    <div class="col-4">
-                        <h2 class="fw-bold text-danger">5K+</h2>
-                        <p>Members</p>
-                    </div>
-
-                    <div class="col-4">
-                        <h2 class="fw-bold text-danger">25+</h2>
-                        <p>Trainers</p>
-                    </div>
-
-                    <div class="col-4">
-                        <h2 class="fw-bold text-danger">10+</h2>
-                        <p>Years</p>
-                    </div>
-
-                </div>
-
             </div>
-
-            <!-- RIGHT IMAGE -->
 
             <div class="col-lg-6 text-center">
 
                 <img src="{% static 'images/homee.avif' %}"
-                    class="img-fluid hero-image rounded-4"
-                    alt="gi">
+                     class="img-fluid hero-image"
+                     alt="gym">
 
             </div>
 
@@ -91,7 +405,7 @@ Iron Studio Fitness
 </section>
 
 <!-- ================================= -->
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
 <!-- ================================= -->
 
 <section class="about-section py-5">
@@ -103,25 +417,24 @@ Iron Studio Fitness
             <div class="col-lg-6 mb-4">
 
                 <img src="{% static 'images/hhhh.avif' %}"
-                    class="img-fluid rounded-4 shadow-lg"
-                    alt="About">
+                     class="img-fluid shadow-lg"
+                     alt="About">
 
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 text-white">
 
                 <h5 class="text-danger fw-bold">
                     ABOUT US
                 </h5>
 
-                <h2 class="display-5 fw-bold mb-4">
-                    Welcome To
-                    Iron Studio Fitness
-                </h2>
+                <h1 class="display-5 fw-bold mb-4">
+                    Welcome To Iron Studio
+                </h1>
 
-                <p class="text-white mb-4">
-                    We provide premium gym facilities with modern machines,
-                    expert trainers, cardio zones, personal training,
+                <p class="text-light mb-4">
+                    Premium gym with world-class machines,
+                    certified trainers, cardio zone,
                     and body transformation programs.
                 </p>
 
@@ -136,11 +449,11 @@ Iron Studio Fitness
                     </div>
 
                     <div class="col-6 mb-3">
-                        ✅ Weight Loss Program
+                        ✅ Weight Loss
                     </div>
 
                     <div class="col-6 mb-3">
-                        ✅ Diet Guidance
+                        ✅ Diet Plans
                     </div>
 
                 </div>
@@ -156,24 +469,29 @@ Iron Studio Fitness
     </div>
 
 </section>
-<section class="motivation-section py-5">
-                
-                    <div class="container text-center text-white">
-                
-                        <h1 class="display-3 fw-bold">
-                            NO PAIN
-                            <span class="text-danger">
-                                NO GAIN
-                            </span>
-                        </h1>
-                
-                        <p class="lead mt-4">
-                            Push harder than yesterday if you want a different tomorrow.
-                        </p>
-                
-                    </div>
-                
-                </section>
+
+<!-- ================================= -->
+<!-- MOTIVATION -->
+<!-- ================================= -->
+
+<section class="motivation-section">
+
+    <div class="container text-center text-white">
+
+        <h1 class="display-3 fw-bold">
+            NO PAIN
+            <span class="text-danger">
+                NO GAIN
+            </span>
+        </h1>
+
+        <p class="lead mt-4">
+            Push harder than yesterday if you want a different tomorrow.
+        </p>
+
+    </div>
+
+</section>
 
 <!-- ================================= -->
 <!-- SERVICES -->
@@ -189,77 +507,62 @@ Iron Studio Fitness
                 OUR SERVICES
             </h5>
 
-            <h2 class="display-5 fw-bold text-white">
+            <h1 class="display-5 fw-bold text-white">
                 What We Offer
-            </h2>
+            </h1>
 
         </div>
 
         <div class="row g-4">
 
-            <!-- CARD -->
-
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4">
 
                 <div class="service-card">
 
-                    <div class="service-icon">
-                        💪
-                    </div>
+                    <div class="service-icon">💪</div>
 
                     <h3 class="mt-4">
                         Body Building
                     </h3>
 
                     <p>
-                        Professional bodybuilding programs
-                        with expert guidance.
+                        Professional bodybuilding programs.
                     </p>
 
                 </div>
 
             </div>
 
-            <!-- CARD -->
-
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4">
 
                 <div class="service-card">
 
-                    <div class="service-icon">
-                        🏃
-                    </div>
+                    <div class="service-icon">🏃</div>
 
                     <h3 class="mt-4">
                         Cardio Fitness
                     </h3>
 
                     <p>
-                        Improve stamina and burn calories
-                        with advanced cardio training.
+                        Improve stamina with cardio workouts.
                     </p>
 
                 </div>
 
             </div>
 
-            <!-- CARD -->
-
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4">
 
                 <div class="service-card">
 
-                    <div class="service-icon">
-                        🥗
-                    </div>
+                    <div class="service-icon">🥗</div>
 
                     <h3 class="mt-4">
                         Diet Plans
                     </h3>
 
                     <p>
-                        Customized diet and nutrition plans
-                        for best results.
+                        Customized nutrition and meal plans.
                     </p>
 
                 </div>
@@ -272,9 +575,89 @@ Iron Studio Fitness
 
 </section>
 
+<!-- ================================= -->
+<!-- WHY CHOOSE -->
+<!-- ================================= -->
 
+<section class="why-section py-5">
 
+    <div class="container">
 
+        <div class="text-center mb-5">
+
+            <h5 class="text-danger fw-bold">
+                WHY CHOOSE US
+            </h5>
+
+            <h1 class="display-5 fw-bold text-white">
+                We Build Strong Bodies
+            </h1>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3">
+
+                <div class="why-card">
+
+                    <div class="why-icon">🏋️</div>
+
+                    <h4>Modern Gym</h4>
+
+                    <p>Latest imported machines.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="why-card">
+
+                    <div class="why-icon">👨‍🏫</div>
+
+                    <h4>Expert Trainers</h4>
+
+                    <p>Certified fitness coaches.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="why-card">
+
+                    <div class="why-icon">🥗</div>
+
+                    <h4>Diet Plans</h4>
+
+                    <p>Customized meal plans.</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="why-card">
+
+                    <div class="why-icon">🔥</div>
+
+                    <h4>Transformation</h4>
+
+                    <p>Complete body transformation.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- ================================= -->
 <!-- TRAINERS -->
@@ -290,9 +673,9 @@ Iron Studio Fitness
                 OUR TRAINERS
             </h5>
 
-            <h2 class="display-5 fw-bold text-white">
+            <h1 class="display-5 fw-bold text-white">
                 Meet Experts
-            </h2>
+            </h1>
 
         </div>
 
@@ -302,9 +685,7 @@ Iron Studio Fitness
 
                 <div class="trainer-card">
 
-                    <img src="{% static 'images/trainer1.jpg' %}"
-                        class="img-fluid"
-                        alt="Trainer">
+                    <img src="{% static 'images/trainer1.jpg' %}" alt="">
 
                     <div class="trainer-info">
 
@@ -321,9 +702,7 @@ Iron Studio Fitness
 
                 <div class="trainer-card">
 
-                    <img src="{% static 'images/trainer2.jpg' %}"
-                         class="img-fluid"
-                         alt="Trainer">
+                    <img src="{% static 'images/trainer2.jpg' %}" alt="">
 
                     <div class="trainer-info">
 
@@ -340,9 +719,7 @@ Iron Studio Fitness
 
                 <div class="trainer-card">
 
-                    <img src="{% static 'images/trainer3.jpg' %}"
-                         class="img-fluid"
-                         alt="Trainer">
+                    <img src="{% static 'images/trainer3.jpg' %}" alt="">
 
                     <div class="trainer-info">
 
@@ -361,6 +738,196 @@ Iron Studio Fitness
 
 </section>
 
+<!-- ================================= -->
+<!-- PLANS -->
+<!-- ================================= -->
+
+<section class="plans-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h5 class="text-danger fw-bold">
+                MEMBERSHIP
+            </h5>
+
+            <h1 class="display-5 fw-bold text-white">
+                Choose Your Plan
+            </h1>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="plan-card">
+
+                    <h2>Basic</h2>
+
+                    <h1 class="text-danger my-4">
+                        ₹999
+                    </h1>
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-3">✔ Gym Access</li>
+                        <li class="mb-3">✔ Cardio</li>
+                        <li class="mb-3">✔ Locker</li>
+
+                    </ul>
+
+                    <button class="btn btn-danger w-100 py-3">
+                        Join Now
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="plan-card premium-plan">
+
+                    <span class="popular-badge">
+                        POPULAR
+                    </span>
+
+                    <h2>Standard</h2>
+
+                    <h1 class="text-danger my-4">
+                        ₹1999
+                    </h1>
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-3">✔ Personal Trainer</li>
+                        <li class="mb-3">✔ Diet Plan</li>
+                        <li class="mb-3">✔ Steam Bath</li>
+
+                    </ul>
+
+                    <button class="btn btn-danger w-100 py-3">
+                        Join Now
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="plan-card">
+
+                    <h2>Premium</h2>
+
+                    <h1 class="text-danger my-4">
+                        ₹2999
+                    </h1>
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-3">✔ VIP Support</li>
+                        <li class="mb-3">✔ Dedicated Trainer</li>
+                        <li class="mb-3">✔ Full Access</li>
+
+                    </ul>
+
+                    <button class="btn btn-danger w-100 py-3">
+                        Join Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================= -->
+<!-- TESTIMONIAL -->
+<!-- ================================= -->
+
+<section class="testimonial-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h5 class="text-danger fw-bold">
+                TESTIMONIALS
+            </h5>
+
+            <h1 class="display-5 fw-bold text-white">
+                What Members Say
+            </h1>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="testimonial-card">
+
+                    <p>
+                        “Amazing gym and best trainers.”
+                    </p>
+
+                    <h5 class="text-danger mt-4">
+                        Rahul Sharma
+                    </h5>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="testimonial-card">
+
+                    <p>
+                        “Lost 12kg in just 4 months.”
+                    </p>
+
+                    <h5 class="text-danger mt-4">
+                        Aman Verma
+                    </h5>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="testimonial-card">
+
+                    <p>
+                        “Premium experience and environment.”
+                    </p>
+
+                    <h5 class="text-danger mt-4">
+                        Neha Patel
+                    </h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================= -->
+<!-- BMI -->
+<!-- ================================= -->
+
 <section class="bmi-section py-5">
 
     <div class="container">
@@ -374,25 +941,25 @@ Iron Studio Fitness
                 </h5>
 
                 <h1 class="display-5 fw-bold mb-4">
-                    Calculate Your Body Mass Index
+                    Calculate BMI
                 </h1>
-
-                <p class="text-light mb-4">
-                    Track your fitness journey and know your body condition.
-                </p>
 
                 <div class="row">
 
                     <div class="col-6 mb-3">
+
                         <input type="text"
                                class="form-control bmi-input"
                                placeholder="Height / cm">
+
                     </div>
 
                     <div class="col-6 mb-3">
+
                         <input type="text"
                                class="form-control bmi-input"
                                placeholder="Weight / kg">
+
                     </div>
 
                 </div>
@@ -405,7 +972,7 @@ Iron Studio Fitness
 
             <div class="col-lg-6 text-center">
 
-                <img src="{% static 'img/hhh.jpg' %}"
+                <img src="{% static 'images/bmi.jpg' %}"
                      class="img-fluid bmi-img"
                      alt="BMI">
 
