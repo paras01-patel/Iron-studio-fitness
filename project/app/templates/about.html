@@ -1,0 +1,667 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About | Iron Studio Fitness
+{% endblock %}
+
+{% block content %}
+
+<!-- ========================= -->
+<!-- ABOUT PAGE -->
+<!-- ========================= -->
+
+<section class="about-page text-white py-5">
+
+    <div class="container">
+
+        <!-- HERO SECTION -->
+        <div class="row align-items-center mb-5 hero-box">
+
+            <!-- LEFT -->
+            <div class="col-lg-6 mb-4">
+
+                <span class="top-badge">
+                    #1 Fitness Gym
+                </span>
+
+                <h1 class="display-3 fw-bold mb-4 text-danger mt-3">
+                    Iron Studio Fitness
+                </h1>
+
+                <p class="lead">
+                    Transform Your Body. Transform Your Life.
+                </p>
+
+                <p class="about-text">
+                    Iron Studio Fitness is more than just a gym.
+                    It is a place where passion, strength, discipline,
+                    and confidence come together.
+                </p>
+
+                <p class="about-text">
+                    Our mission is to help every member become
+                    stronger physically and mentally with
+                    professional guidance and a powerful environment.
+                </p>
+
+                <!-- BUTTONS -->
+                <div class="d-flex gap-3 flex-wrap mt-4">
+
+                    <a href="{% url 'sign' %}" class="btn btn-danger btn-lg px-4">
+                        Join Today
+                    </a>
+
+                    <a href="#" class="btn btn-outline-light btn-lg px-4">
+                        Explore Plans
+                    </a>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="row mt-5 g-3">
+
+                    <div class="col-4">
+                        <div class="stats-box">
+                            <h2>5+</h2>
+                            <p>Years</p>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="stats-box">
+                            <h2>2K+</h2>
+                            <p>Members</p>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="stats-box">
+                            <h2>15+</h2>
+                            <p>Trainers</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-lg-6 text-center">
+
+                <img src="{% static 'images/ab.avif' %}"
+                    class="img-fluid about-image"
+                    alt="Gym">
+
+            </div>
+
+        </div>
+
+        <!-- FEATURES -->
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold section-title">
+                Why Choose Us
+            </h2>
+
+            <p class="text-secondary">
+                Train with the best fitness environment.
+            </p>
+
+        </div>
+
+        <div class="row g-4 mb-5">
+
+            <!-- CARD 1 -->
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="icon-box">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+
+                    <h3>
+                        Modern Equipment
+                    </h3>
+
+                    <p>
+                        Premium quality gym machines and workout tools.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="icon-box">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+
+                    <h3>
+                        Fat Loss Training
+                    </h3>
+
+                    <p>
+                        Effective workout programs for quick transformation.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <div class="icon-box">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+
+                    <h3>
+                        Expert Trainers
+                    </h3>
+
+                    <p>
+                        Certified trainers for complete fitness guidance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- EXTRA SERVICES -->
+        <div class="services-box mb-5">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold section-title">
+                    Our Services
+                </h2>
+
+                <p class="text-secondary">
+                    Everything you need for complete fitness.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h5>Cardio Training</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fa-solid fa-person-running"></i>
+                        <h5>Weight Loss</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fa-solid fa-apple-whole"></i>
+                        <h5>Diet Plans</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fa-solid fa-spa"></i>
+                        <h5>Yoga Classes</h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MISSION SECTION -->
+        <div class="mission-box mb-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 mb-4 text-center">
+
+                    <img src="{% static 'images/abc.avif' %}"
+                        class="img-fluid mission-image"
+                        alt="Mission">
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <h2 class="fw-bold text-danger mb-4">
+                        Our Mission
+                    </h2>
+
+                    <p class="mission-text">
+                        Our mission is to motivate and guide every person
+                        toward a healthy and strong lifestyle.
+                    </p>
+
+                    <p class="mission-text">
+                        We focus on strength training, body transformation,
+                        endurance, confidence, and overall fitness.
+                    </p>
+
+                    <ul class="mission-list">
+
+                        <li>
+                            Professional Gym Environment
+                        </li>
+
+                        <li>
+                            Certified Fitness Trainers
+                        </li>
+
+                        <li>
+                            Friendly Community Support
+                        </li>
+
+                        <li>
+                            Personalized Workout Plans
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TIMING SECTION -->
+        <div class="timing-box mb-5">
+
+            <div class="text-center mb-4">
+
+                <h2 class="fw-bold section-title">
+                    Gym Timing
+                </h2>
+
+            </div>
+
+            <div class="row text-center">
+
+                <div class="col-md-4 mb-3">
+                    <div class="time-card">
+                        <h4>Morning</h4>
+                        <p>5:00 AM - 11:00 AM</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="time-card">
+                        <h4>Evening</h4>
+                        <p>4:00 PM - 10:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="time-card">
+                        <h4>Sunday</h4>
+                        <p>Closed</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TRAINERS -->
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold section-title">
+                Meet Our Trainers
+            </h2>
+
+            <p class="text-secondary">
+                Dedicated professionals for your fitness journey.
+            </p>
+
+        </div>
+
+        <div class="row g-4 mb-5">
+
+            <!-- TRAINER 1 -->
+            <div class="col-md-4">
+
+                <div class="trainer-card">
+
+                    <img src="{% static 'images/trainer1.jpg' %}"
+                        class="trainer-image"
+                        alt="Trainer">
+
+                    <div class="trainer-content">
+
+                        <h4>
+                            Paras Patel
+                        </h4>
+
+                        <p>
+                            Strength Coach
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRAINER 2 -->
+            <div class="col-md-4">
+
+                <div class="trainer-card">
+
+                    <img src="{% static 'images/trainer2.jpg' %}"
+                        class="trainer-image"
+                        alt="Trainer">
+
+                    <div class="trainer-content">
+
+                        <h4>
+                            Vikas Pawar
+                        </h4>
+
+                        <p>
+                            Fitness Trainer
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRAINER 3 -->
+            <div class="col-md-4">
+
+                <div class="trainer-card">
+
+                    <img src="{% static 'images/trainer3.jpg' %}"
+                        class="trainer-image"
+                        alt="Trainer">
+
+                    <div class="trainer-content">
+
+                        <h4>
+                            Karan Lifter
+                        </h4>
+
+                        <p>
+                            Yoga Expert
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box text-center">
+
+            <h2 class="fw-bold mb-3">
+                Start Your Fitness Journey Today
+            </h2>
+
+            <p class="text-secondary mb-4">
+                Push yourself because no one else is going to do it for you.
+            </p>
+
+            <a href="{% url 'sign' %}" class="btn btn-danger btn-lg px-5">
+                Become Member
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CSS -->
+<!-- ========================= -->
+
+<style>
+
+.about-page{
+    background: #000;
+    min-height: 100vh;
+}
+
+.hero-box{
+    padding: 40px 0;
+}
+
+.top-badge{
+    background: rgba(255,0,0,0.1);
+    color: red;
+    border: 1px solid red;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.about-image{
+    width: 85%;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255,0,0,0.3);
+}
+
+.about-text{
+    color: #bbb;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.section-title{
+    color: white;
+    font-size: 40px;
+}
+
+.stats-box{
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #222;
+}
+
+.stats-box h2{
+    color: red;
+    font-weight: bold;
+}
+
+.stats-box p{
+    color: #aaa;
+    margin: 0;
+}
+
+.feature-card{
+    background: #111;
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.4s;
+    height: 100%;
+    border: 1px solid #222;
+}
+
+.feature-card:hover{
+    transform: translateY(-10px);
+    border-color: red;
+}
+
+.icon-box{
+    width: 80px;
+    height: 80px;
+    background: red;
+    color: white;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3{
+    color: white;
+    margin-bottom: 15px;
+}
+
+.feature-card p{
+    color: #aaa;
+}
+
+.services-box{
+    padding: 20px 0;
+}
+
+.service-card{
+    background: #111;
+    border: 1px solid #222;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.service-card:hover{
+    transform: translateY(-10px);
+    border-color: red;
+}
+
+.service-card i{
+    color: red;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h5{
+    color: white;
+}
+
+.mission-box{
+    background: #111;
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid #222;
+}
+
+.mission-image{
+    border-radius: 20px;
+    width: 75%;
+}
+
+.mission-text{
+    color: #bbb;
+    line-height: 30px;
+}
+
+.mission-list{
+    margin-top: 20px;
+    color: #ddd;
+}
+
+.mission-list li{
+    margin-bottom: 10px;
+}
+
+.timing-box{
+    background: #111;
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid #222;
+}
+
+.time-card{
+    background: #000;
+    border: 1px solid #222;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.time-card h4{
+    color: red;
+}
+
+.time-card p{
+    color: #bbb;
+    margin: 0;
+}
+
+.trainer-card{
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid #222;
+}
+
+.trainer-card:hover{
+    transform: translateY(-10px);
+    border-color: red;
+}
+
+.trainer-image{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.trainer-content{
+    padding: 20px;
+    text-align: center;
+}
+
+.trainer-content h4{
+    color: white;
+}
+
+.trainer-content p{
+    color: red;
+    margin: 0;
+}
+
+.cta-box{
+    background: linear-gradient(to right, #111, #1a0000);
+    padding: 60px 30px;
+    border-radius: 20px;
+    border: 1px solid #222;
+}
+
+@media(max-width:768px){
+
+    .about-image{
+        width: 100%;
+    }
+
+    .mission-image{
+        width: 100%;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+
+}
+
+</style>
+
+{% endblock %}

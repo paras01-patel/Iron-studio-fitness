@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Report a Problem | Iron Studio Fitness
+{% endblock %}
+
+{% block content %}
+
+<!-- ========================= -->
+<!-- REPORT PAGE -->
+<!-- ========================= -->
+
+<section class="report-page py-5 text-white">
+
+    <div class="container">
+
+        <!-- HEADING -->
+        <div class="text-center mb-5">
+
+            <h1 class="display-4 fw-bold text-danger">
+                Report a Problem
+            </h1>
+
+            <p class="text-secondary">
+                Tell us about the issue you are facing
+            </p>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="report-box">
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        <!-- NAME -->
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                name="name"
+                                class="form-control custom-input"
+                                placeholder="Enter your name">
+
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                name="email"
+                                class="form-control custom-input"
+                                placeholder="Enter your email">
+
+                        </div>
+
+                        <!-- PROBLEM TYPE -->
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Problem Type
+                            </label>
+
+                            <select name="problem"
+                                    class="form-select custom-input">
+
+                                <option selected disabled>
+                                    Select Problem
+                                </option>
+
+                                <option>
+                                    Login Issue
+                                </option>
+
+                                <option>
+                                    Membership Problem
+                                </option>
+
+                                <option>
+                                    Payment Issue
+                                </option>
+
+                                <option>
+                                    Website Bug
+                                </option>
+
+                                <option>
+                                    Trainer Complaint
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- MESSAGE -->
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Describe Problem
+                            </label>
+
+                            <textarea rows="6"
+                                    name="message"
+                                    class="form-control custom-input"
+                                    placeholder="Write your issue here..."></textarea>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button type="submit"
+                                class="btn btn-danger w-100 py-3 fw-bold">
+
+                            Submit Report
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CSS -->
+<!-- ========================= -->
+
+<style>
+
+.report-page{
+    background:#000;
+    min-height:100vh;
+}
+
+.report-box{
+    background:#111;
+    padding:40px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 0 25px rgba(255,0,0,0.08);
+}
+
+.form-label{
+    margin-bottom:10px;
+    color:white;
+    font-weight:500;
+}
+
+.custom-input{
+    background:#0b0b0b;
+    border:1px solid #222;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+}
+
+.custom-input:focus{
+    background:#0b0b0b;
+    color:white;
+    border-color:#ff1e1e;
+    box-shadow:none;
+}
+
+.custom-input::placeholder{
+    color:#777;
+}
+
+.form-select option{
+    background:#111;
+    color:white;
+}
+
+textarea{
+    resize:none;
+}
+
+.btn-danger{
+    border-radius:12px;
+    font-size:17px;
+    transition:0.3s;
+}
+
+.btn-danger:hover{
+    transform:translateY(-3px);
+}
+
+</style>
+
+{% endblock %}

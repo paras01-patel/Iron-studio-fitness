@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Join Membership | Iron Studio Fitness
+{% endblock %}
+
+{% block content %}
+
+<!-- ========================= -->
+<!-- JOIN MEMBERSHIP FORM -->
+<!-- ========================= -->
+
+<section style="
+    min-height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+">
+
+    <div style="
+        width:700px;
+        background:#111;
+        padding:40px;
+        border-radius:20px;
+        border:1px solid #222;
+        box-shadow:0 0 25px rgba(255,0,0,0.3);
+    ">
+
+        <!-- HEADING -->
+        <div style="text-align:center; margin-bottom:35px;">
+
+            <h1 style="
+                color:red;
+                font-size:42px;
+                font-weight:bold;
+                margin-bottom:15px;
+            ">
+                Join Membership
+            </h1>
+
+            <p style="
+                color:#bbb;
+                font-size:18px;
+                line-height:30px;
+            ">
+                Choose your gym membership plan and start
+                your fitness journey with Iron Studio Fitness.
+            </p>
+
+        </div>
+
+        <!-- FORM -->
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <!-- NAME -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Full Name
+            </label>
+
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your full name"
+                   required
+                   style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                   ">
+
+            <!-- EMAIL -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Email Address
+            </label>
+
+            <input type="email"
+            placeholder="Enter your email"
+            name="email"
+            required
+            style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                   ">
+
+            <!-- PHONE -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Phone Number
+            </label>
+
+            <input type="number"
+                name="phone"
+                placeholder="Enter phone number"
+                required
+                style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                ">
+
+            <!-- AGE -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Age
+            </label>
+
+            <input type="number"
+                name="age"
+                placeholder="Enter your age"
+                required
+                style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                ">
+
+            <!-- SELECT PLAN -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Select Membership Plan
+            </label>
+
+            <select name="plan"
+                    required
+                    style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                    ">
+
+                <option value="">
+                    -- Select Plan --
+                </option>
+
+                <option value="Basic Plan">
+                    Basic Plan - ₹999 / Month
+                </option>
+
+                <option value="Standard Plan">
+                    Standard Plan - ₹2499 / 3 Months
+                </option>
+
+                <option value="Premium Plan">
+                    Premium Plan - ₹6999 / Year
+                </option>
+
+            </select>
+
+            <!-- TRAINER -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Select Trainer
+            </label>
+
+            <select name="trainer"
+                    style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                    ">
+
+                <option>Paras Patel</option>
+                <option>Vikas Pawar</option>
+                <option>Pawan Sahu</option>
+                <option>Karan Lifts</option>
+                <option>Ayush Vishwakarma</option>
+                <option>Dr. Punijita Sen</option>
+
+            </select>
+
+            <!-- FITNESS GOAL -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Fitness Goal
+            </label>
+
+            <select name="goal"
+                    style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                    ">
+
+                <option>Fat Loss</option>
+                <option>Weight Gain</option>
+                <option>Muscle Gain</option>
+                <option>Strength Training</option>
+                <option>Body Transformation</option>
+
+            </select>
+
+            <!-- MESSAGE -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Additional Message
+            </label>
+
+            <textarea name="message"
+                    placeholder="Write your doubts or questions"
+                    style="
+                            width:100%;
+                            height:130px;
+                            padding:14px;
+                            margin-bottom:25px;
+                            border:none;
+                            border-radius:10px;
+                            outline:none;
+                            background:#1d1d1d;
+                            color:white;
+                      "></textarea>
+
+            <!-- BUTTON -->
+            <button type="submit"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        background:red;
+                        color:white;
+                        border:none;
+                        border-radius:10px;
+                        font-size:18px;
+                        font-weight:bold;
+                        cursor:pointer;
+                        transition:0.4s;
+                    ">
+
+                Join Now
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

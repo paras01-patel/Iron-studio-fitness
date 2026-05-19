@@ -1,0 +1,670 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Trainers | Iron Studio Fitness
+{% endblock %}
+
+{% block content %}
+
+{% comment %} <script>
+
+    window.onload = function(){
+        let code = prompt("Enter Trainer Access Code");
+        if(code === "iron123"){
+            alert("Access Granted");
+        }
+        else{
+            alert("Wrong Code");
+            window.location.href = "/";
+        }
+    }
+
+</script> {% endcomment %}
+
+<!-- ========================= -->
+<!-- TRAINERS PAGE -->
+<!-- ========================= -->
+
+<section class="trainer-page py-5 text-white">
+
+    <div class="container">
+
+        <!-- HEADING -->
+        <div class="text-center mb-5">
+
+            <h1 class="display-4 fw-bold text-danger">
+                Our Trainers
+            </h1>
+
+            <p class="text-secondary">
+                Meet the professionals behind your transformation
+            </p>
+
+        </div>
+
+        <!-- TRAINERS -->
+        <div class="row g-4">
+
+            <!-- TRAINER 1 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trainer-card">
+
+                    <div class="trainer-image-box">
+
+                        <img src="{% static 'images/trainer1.jpg' %}"
+                            class="trainer-image"
+                            alt="Trainer">
+
+                    </div>
+
+                    <div class="trainer-content">
+
+                        <h3>
+                            Paras Patel 
+                        </h3>
+
+                        <h5>
+                            Strength Coach
+                        </h5>
+
+                        <p>
+                            Expert in muscle building, strength training,
+                            and bodybuilding programs.
+                        </p>
+
+                        <div class="social-icons">
+
+                            <a href="https://www.instagram.com/paras_patel.01/">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRAINER 2 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trainer-card">
+
+                    <div class="trainer-image-box">
+
+                        <img src="{% static 'images/trainer2.jpg' %}"
+                            class="trainer-image"
+                            alt="Trainer">
+
+                    </div>
+
+                    <div class="trainer-content">
+
+                        <h3>
+                            Vikas Pawar
+                        </h3>
+
+                        <h5>
+                            Fitness Trainer
+                        </h5>
+
+                        <p>
+                            Specialized in fat loss, cardio,
+                            endurance, and transformation workouts.
+                        </p>
+
+                        <div class="social-icons">
+
+                            <a href="https://www.instagram.com/_vikasss5_/">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRAINER 3 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trainer-card">
+
+                    <div class="trainer-image-box">
+
+                        <img src="{% static 'images/trainer3.jpg' %}"
+                            class="trainer-image"
+                            alt="Trainer">
+
+                    </div>
+
+                    <div class="trainer-content">
+
+                        <h3>
+                            dr.Punijita Sen
+                        </h3>
+
+                        <h5>
+                            Yoga Expert
+                        </h5>
+
+                        <p>
+                            Professional yoga trainer for flexibility,
+                            meditation, and healthy lifestyle.
+                        </p>
+
+                        <div class="social-icons">
+
+                            <a href="https://www.instagram.com/yogagirl_purnajita/">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRAINER 4 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trainer-card">
+
+                    <div class="trainer-image-box">
+
+                        <img src="{% static 'images/trainer4.jpg' %}"
+                            class="trainer-image"
+                            alt="Trainer">
+
+                    </div>
+
+                    <div class="trainer-content">
+
+                        <h3>
+                            Pawan Sahu
+                        </h3>
+
+                        <h5>
+                            CrossFit Coach
+                        </h5>
+
+                        <p>
+                            High-intensity functional training
+                            specialist for athletic performance.
+                        </p>
+
+                        <div class="social-icons">
+
+                            <a href="https://www.instagram.com/pawan_sahu_777/">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRAINER 5 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trainer-card">
+
+                    <div class="trainer-image-box">
+
+                        <img src="{% static 'images/trainer5.jpg' %}"
+                            class="trainer-image"
+                            alt="Trainer">
+
+                    </div>
+
+                    <div class="trainer-content">
+
+                        <h3>
+                            Karan lifts
+                        </h3>
+
+                        <h5>
+                            Nutrition Coach
+                        </h5>
+
+                        <p>
+                            Personalized diet and nutrition plans
+                            for healthy body transformation.
+                        </p>
+
+                        <div class="social-icons">
+
+                            <a href="https://www.instagram.com/karan__lifts__01/">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TRAINER 6 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trainer-card">
+
+                    <div class="trainer-image-box">
+
+                        <img src="{% static 'images/trainer6.jpg' %}"
+                            class="trainer-image"
+                            alt="Trainer">
+
+                    </div>
+
+                    <div class="trainer-content">
+
+                        <h3>
+                            Ayush vishvkarma 
+                        </h3>
+
+                        <h5>
+                            Personal Trainer
+                        </h5>
+
+                        <p>
+                            One-on-one coaching for strength,
+                            fitness goals, and body conditioning.
+                        </p>
+
+                        <div class="social-icons">
+
+                            <a href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================= -->
+<!-- JOIN TRAINER FORM -->
+<!-- ========================= -->
+
+<section style="
+    min-height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+">
+
+    <div style="
+        width:650px;
+        background:#111;
+        padding:40px;
+        border-radius:20px;
+        box-shadow:0 0 25px rgba(255,0,0,0.3);
+        border:1px solid #222;
+    ">
+
+        <!-- HEADING -->
+        <div style="text-align:center; margin-bottom:30px;">
+
+            <h1 style="
+                color:red;
+                font-size:42px;
+                font-weight:bold;
+                margin-bottom:15px;
+            ">
+                Start Your Fitness Transformation
+            </h1>
+
+            <p style="
+                color:#bbb;
+                font-size:18px;
+                line-height:30px;
+            ">
+                Join Iron Studio Fitness today and train with professional
+                coaches to achieve your dream body, strength, and confidence.
+            </p>
+
+        </div>
+
+        <!-- FORM -->
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <!-- NAME -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Full Name
+            </label>
+
+            <input type="text"
+                name="name"
+                placeholder="Enter your full name"
+                style="
+                    width:100%;
+                    padding:14px;
+                    margin-bottom:22px;
+                    border:none;
+                    border-radius:10px;
+                    outline:none;
+                    background:#1d1d1d;
+                    color:white;
+                ">
+
+            <!-- AGE -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Age
+            </label>
+
+            <input type="number"
+                name="age"
+                placeholder="Enter your age"
+                style="
+                    width:100%;
+                    padding:14px;
+                    margin-bottom:22px;
+                    border:none;
+                    border-radius:10px;
+                    outline:none;
+                    background:#1d1d1d;
+                    color:white;
+                ">
+
+            <!-- PHONE -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Phone Number
+            </label>
+
+            <input type="number"
+                name="phone"
+                placeholder="Enter your phone number"
+                style="
+                    width:100%;
+                    padding:14px;
+                    margin-bottom:22px;
+                    border:none;
+                    border-radius:10px;
+                    outline:none;
+                    background:#1d1d1d;
+                    color:white;
+                ">
+
+            <!-- TRAINER -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Select Trainer
+            </label>
+
+            <select name="trainer"
+                    style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                    ">
+
+                <option>Paras Patel</option>
+                <option>Vikas Pawar</option>
+                <option>Karan Lifter</option>
+                <option>Pawan Sahu</option>
+                <option>Ayush Vishwakarma</option>
+                <option>Dr. Punijita Sen</option>
+
+            </select>
+
+            <!-- GOAL -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Fitness Goal
+            </label>
+
+            <select name="goal"
+                    style="
+                        width:100%;
+                        padding:14px;
+                        margin-bottom:22px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                    ">
+
+                <option>Fat Loss</option>
+                <option>Weight Gain</option>
+                <option>Muscle Gain</option>
+                <option>Strength Training</option>
+                <option>Endurance / Stamina</option>
+                <option>Flexibility / Yoga</option>
+
+            </select>
+
+            <!-- MESSAGE -->
+            <label style="
+                color:white;
+                display:block;
+                margin-bottom:8px;
+                font-size:17px;
+            ">
+                Message
+            </label>
+
+            <textarea name="message"
+                    placeholder="Other doubt and Quetions " 
+                    style="
+                        width:100%;
+                        height:140px;
+                        padding:14px;
+                        margin-bottom:25px;
+                        border:none;
+                        border-radius:10px;
+                        outline:none;
+                        background:#1d1d1d;
+                        color:white;
+                    "></textarea>
+
+            <!-- BUTTON -->
+            <button type="submit"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        background:red;
+                        color:white;
+                        border:none;
+                        border-radius:10px;
+                        font-size:18px;
+                        font-weight:bold;
+                        cursor:pointer;
+                        transition:0.4s;
+                    ">
+
+                Join Now
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<style>
+
+.trainer-page{
+    background: #000;
+    min-height: 100vh;
+}
+
+.trainer-card{
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid #222;
+    height: 100%;
+}
+
+.trainer-card:hover{
+    transform: translateY(-10px);
+    border-color: red;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+
+.trainer-image-box{
+    overflow: hidden;
+}
+
+.trainer-image{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.trainer-card:hover .trainer-image{
+    transform: scale(1.05);
+}
+
+.trainer-content{
+    padding: 25px;
+    text-align: center;
+}
+
+.trainer-content h3{
+    color: white;
+    margin-bottom: 10px;
+}
+
+.trainer-content h5{
+    color: red;
+    margin-bottom: 15px;
+}
+
+.trainer-content p{
+    color: #aaa;
+    line-height: 28px;
+}
+
+.social-icons{
+    margin-top: 20px;
+}
+
+.social-icons a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #1d1d1d;
+    color: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.social-icons a:hover{
+    background: red;
+    transform: translateY(-5px);
+}
+
+</style>
+
+{% endblock %}
