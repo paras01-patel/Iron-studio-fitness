@@ -5,26 +5,46 @@
 {% block content %}
 
 <!-- ================= HERO ================= -->
-<section class="bg-dark text-white text-center py-5">
+<section class="bg-dark text-white text-center py-5 hero-section">
     <div class="container">
-        <h1 class="display-5 fw-bold">Choose Your Plan</h1>
-        <p class="lead">Best fitness plans for your body transformation 💪</p>
+
+        <h1 class="display-5 fw-bold">
+            Choose Your Plan
+        </h1>
+
+        <p class="lead">
+            Best fitness plans for your body transformation 💪
+        </p>
+
+        <!-- EXTRA MOTIVATION -->
+        <h4 class="text-danger fw-bold mt-4">
+            "Push Yourself Because No One Else Is Going To Do It For You."
+        </h4>
+
+        <p class="text-light mt-3">
+            Train Hard • Stay Strong • Become Unstoppable 🔥
+        </p>
+
     </div>
 </section>
 
 
 <!-- ================= NORMAL PLAN ================= -->
-<section class="py-5">
+<section class="py-5 bg-black">
+
     <div class="container">
 
-        <h2 class="text-center fw-bold mb-4">Normal Gym Plan</h2>
+        <h2 class="text-center fw-bold mb-4 text-white">
+            Normal Gym Plan
+        </h2>
 
         <div class="row g-4 text-center">
 
             <div class="col-md-3">
-                <div class="p-4 bg-light shadow rounded-4 h-100">
+                <div class="plan-card p-4 bg-light shadow rounded-4 h-100">
 
                     <h4 style="color:black;">1 Month</h4>
+
                     <h3 class="text-danger">₹499</h3>
 
                     <hr>
@@ -34,58 +54,89 @@
                     <p style="color:black;">✔ Locker Facility</p>
                     <p style="color:black;">❌ Trainer Support</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Join</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Join
+
+                    </a>
+
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="p-4 bg-light shadow rounded-4 h-100">
+                <div class="plan-card p-4 bg-light shadow rounded-4 h-100">
 
                     <h4 style="color:black;">3 Months</h4>
-                    <hr>
-                    <h3 class="text-danger">₹1299</h3>
 
+                    <hr>
+
+                    <h3 class="text-danger">₹1299</h3>
 
                     <p style="color:black;">✔ Gym Access</p>
                     <p style="color:black;">✔ Cardio Machines</p>
                     <p style="color:black;">✔ Locker Facility</p>
                     <p style="color:black;">❌ Trainer Support</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Join</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Join
+
+                    </a>
+
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="p-4 bg-light shadow rounded-4 h-100">
+                <div class="plan-card p-4 bg-light shadow rounded-4 h-100">
 
                     <h4 style="color:black;">6 Months</h4>
-                    <hr>
-                    <h3 class="text-danger">₹2499</h3>
 
+                    <hr>
+
+                    <h3 class="text-danger">₹2499</h3>
 
                     <p style="color:black;">✔ Gym Access</p>
                     <p style="color:black;">✔ Full Equipment</p>
                     <p style="color:black;">✔ Diet Guidance</p>
                     <p style="color:black;">❌ Personal Trainer</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Join</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Join
+
+                    </a>
+
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="p-4 bg-light shadow rounded-4 border border-danger h-100">
+                <div class="plan-card p-4 bg-light shadow rounded-4 border border-danger h-100">
+
+                    <span class="badge bg-danger mb-3">
+                        MOST POPULAR
+                    </span>
 
                     <h4 style="color:black;">12 Months</h4>
-                    <hr>
-                    <h3 class="text-danger">₹3999</h3>
 
+                    <hr>
+
+                    <h3 class="text-danger">₹3999</h3>
 
                     <p style="color:black;">✔ Full Gym Access</p>
                     <p style="color:black;">✔ All Equipment</p>
                     <p style="color:black;">✔ Diet Plan</p>
                     <p style="color:black;">✔ Discount Offer</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Best Deal</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Best Deal
+
+                    </a>
+
                 </div>
             </div>
 
@@ -95,77 +146,113 @@
 
 
 <!-- ================= CARDIO PLAN ================= -->
-<section class="py-5 ">
+<section class="py-5 bg-dark">
 
     <div class="container">
 
-        <h2 class="text-center fw-bold mb-4">Cardio Plan</h2>
+        <h2 class="text-center fw-bold mb-4 text-white">
+            Cardio Plan
+        </h2>
 
         <div class="row g-4 text-center">
 
             <div class="col-md-3">
-                <div class="p-4 bg-white shadow rounded-4 h-100">
+                <div class="plan-card p-4 bg-white shadow rounded-4 h-100">
 
                     <h4 style="color:black;">1 Month</h4>
-                    <hr>
-                    <h3 class="text-danger">₹699</h3>
 
+                    <hr>
+
+                    <h3 class="text-danger">₹699</h3>
 
                     <p style="color:black;">✔ Treadmill Access</p>
                     <p style="color:black;">✔ Cycling Machine</p>
                     <p style="color:black;">✔ Fat Burn Sessions</p>
                     <p style="color:black;">❌ Trainer</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Join</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Join
+
+                    </a>
+
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="p-4 bg-white shadow rounded-4 h-100">
+                <div class="plan-card p-4 bg-white shadow rounded-4 h-100">
 
                     <h4 style="color:black;">3 Months</h4>
-                    <hr>
-                    <h3 class="text-danger">₹1799</h3>
 
+                    <hr>
+
+                    <h3 class="text-danger">₹1799</h3>
 
                     <p style="color:black;">✔ Full Cardio Area</p>
                     <p style="color:black;">✔ Weight Loss Program</p>
                     <p style="color:black;">✔ Fat Burn Plan</p>
                     <p style="color:black;">❌ Trainer</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Join</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Join
+
+                    </a>
+
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="p-4 bg-white shadow rounded-4 h-100">
+                <div class="plan-card p-4 bg-white shadow rounded-4 h-100">
 
                     <h4 style="color:black;">6 Months</h4>
-                    <hr>
-                    <h3 class="text-danger">₹3299</h3>
 
+                    <hr>
+
+                    <h3 class="text-danger">₹3299</h3>
 
                     <p style="color:black;">✔ Advanced Cardio</p>
                     <p style="color:black;">✔ Weight Loss Guide</p>
                     <p style="color:black;">✔ Diet Tips</p>
                     <p style="color:black;">❌ Trainer</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Join</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Join
+
+                    </a>
+
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="p-4 bg-white shadow rounded-4 h-100">
+                <div class="plan-card p-4 bg-white shadow rounded-4 h-100">
+
+                    <span class="badge bg-success mb-3">
+                        FAT LOSS SPECIAL
+                    </span>
 
                     <h4 style="color:black;">12 Months</h4>
+
                     <hr>
+
                     <h3 class="text-danger">₹4999</h3>
+
                     <p style="color:black;">✔ Full Cardio Access</p>
                     <p style="color:black;">✔ Fat Loss Plan</p>
                     <p style="color:black;">✔ Diet + Workout</p>
                     <p style="color:black;">✔ Best Results</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-danger w-100 mt-2">Best Deal</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-danger w-100 mt-2">
+
+                        Best Deal
+
+                    </a>
+
                 </div>
             </div>
 
@@ -179,16 +266,28 @@
 
     <div class="container">
 
-        <h2 class="text-center fw-bold mb-4">Personal Trainer (PT)</h2>
+        <h2 class="text-center fw-bold mb-4">
+            Personal Trainer (PT)
+        </h2>
+
+        <!-- EXTRA TEXT -->
+        <p class="text-center text-secondary mb-5 fs-5">
+            "Success Starts With Self Discipline 💪"
+        </p>
 
         <div class="row justify-content-center">
 
             <div class="col-md-6">
-                <div class="p-5 border shadow rounded-4 text-center bg-black">
 
-                    <h3 class="fw-bold">PT Training</h3>
+                <div class="pt-box p-5 border shadow rounded-4 text-center bg-black">
 
-                    <h2 class="text-warning">₹1999 / month</h2>
+                    <h3 class="fw-bold">
+                        PT Training
+                    </h3>
+
+                    <h2 class="text-warning">
+                        ₹1999 / month
+                    </h2>
 
                     <hr>
 
@@ -197,14 +296,121 @@
                     <p>✔ Diet Guidance</p>
                     <p>✔ Fast Body Transformation</p>
 
-                    <a href="{% url 'join' %}" class="btn btn-warning w-100 mt-2">Book PT</a>
+                    <a href="{% url 'join' %}"
+                        class="btn btn-warning w-100 mt-2">
+
+                        Book PT
+
+                    </a>
 
                 </div>
+
             </div>
 
         </div>
     </div>
 </section>
 
+
+<!-- ================= EXTRA FITNESS SECTION ================= -->
+<section class="py-5 bg-black text-white">
+
+    <div class="container">
+
+        <div class="row g-4 text-center">
+
+            <div class="col-md-4">
+
+                <div class="extra-box p-4 rounded-4">
+
+                    <h3 class="text-danger fw-bold">
+                        NO EXCUSES
+                    </h3>
+
+                    <p class="mt-3 text-secondary">
+                        Every workout brings you closer
+                        to your dream body.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="extra-box p-4 rounded-4">
+
+                    <h3 class="text-warning fw-bold">
+                        STAY CONSISTENT
+                    </h3>
+
+                    <p class="mt-3 text-secondary">
+                        Small daily progress creates
+                        massive long-term results.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="extra-box p-4 rounded-4">
+
+                    <h3 class="text-success fw-bold">
+                        TRAIN HARD
+                    </h3>
+
+                    <p class="mt-3 text-secondary">
+                        Pain is temporary but
+                        results last forever.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CSS ================= -->
+<style>
+
+.hero-section{
+    overflow: hidden;
+}
+
+.plan-card{
+    transition: 0.4s;
+}
+
+.plan-card:hover{
+    transform: translateY(-10px);
+}
+
+.pt-box{
+    transition: 0.4s;
+}
+
+.pt-box:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 0px 25px rgba(255,255,0,0.3);
+}
+
+.extra-box{
+    background: #111;
+    border: 1px solid #222;
+    transition: 0.4s;
+}
+
+.extra-box:hover{
+    transform: translateY(-10px);
+    border-color: red;
+}
+
+</style>
 
 {% endblock %}
